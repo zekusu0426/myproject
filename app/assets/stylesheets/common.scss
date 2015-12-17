@@ -1,10 +1,8 @@
-// 文字の設定・タイポグラフィ
-
-
 // base-color = #efefef
 // main-color = rgb(233,30,99)
 // accent-color = rgb(244,67,54)
 
+// 文字の設定・タイポグラフィ
 body {
   font-family:Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" , "Meiryo UI" , "メイリオ" , Meiryo , "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
 }
@@ -12,7 +10,6 @@ body {
 .mdl-layout-title {
   font-family:Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" , "Meiryo UI" , "メイリオ" , Meiryo , "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
 }
-
 
 .mdl-layout {
   background-color: #efefef;
@@ -28,6 +25,11 @@ body {
   font-weight: bold;
 }
 
+// 基本構造
+.mdl-layout__header {
+  background-color: rgb(233,30,99);
+}
+
 
 
 // レスポンシブデザイン
@@ -36,7 +38,6 @@ body {
 
   .mdl-layout__header {
     position: fixed;
-    margin-bottom: 56px;
   }
 
   .mdl-layout__drawer-button {
@@ -46,7 +47,11 @@ body {
   }
 
   .mdl-layout__container {
-    height: 3000px;
+    margin: 0 auto;
+  }
+
+  main {
+    margin-top: 56px;
   }
 }
 
