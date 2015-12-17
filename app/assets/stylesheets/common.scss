@@ -1,5 +1,18 @@
-.mdl-mega-footer {
-    margin-top : 240px;
-    margin-left: 240px;
+
+@media screen and (max-width: 1024px) {
+
+  .mdl-layout__header {
+    position: fixed;
+  }
+
+  .mdl-layout__drawer-button {
+      margin: 4px;
+      color: rgba(255, 255, 255, 1.0);
+      position: fixed;
+  }
+
+  .mdl-layout__container {
+    height: 3000px;
+  }
 }
 
