@@ -32,14 +32,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'devise'
-
-gem 'cancancan'
-
-gem 'rails_admin'
-
-gem 'yaml_db'
-
 # annotate
 gem 'annotate'
 
