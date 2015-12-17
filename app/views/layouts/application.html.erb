@@ -18,20 +18,24 @@
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
       <!-- Title -->
-      <span class="mdl-layout-title">Title</span>
-      <!-- Add spacer, to align navigation to the right -->
+      <span class="mdl-layout-title">ここにタイトル入力するよ</span>
+      <% if admin_user_signed_in? %>
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation. We hide it in small screens. -->
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-        <a class="mdl-navigation__link" href="">Link</a>
+        <%= link_to 'User', root_path, {:class => "mdl-navigation__link"} %>
         <a class="mdl-navigation__link" href="">Link</a>
         <a class="mdl-navigation__link" href="">Link</a>
         <a class="mdl-navigation__link" href="">Link</a>
       </nav>
+      <% end %>
     </div>
   </header>
 
+
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+
+<% if admin_user_signed_in? %>
   <div class="mdl-layout__drawer">
     <span class="mdl-layout-title">Title</span>
     <nav class="mdl-navigation">
@@ -41,12 +45,13 @@
       <a class="mdl-navigation__link" href="">Link</a>
     </nav>
   </div>
-  <main class="mdl-layout__content">
+<% end %>
+  <main class="mdl-layout__content" <% unless admin_user_signed_in? %> style="margin: 0 auto;" <% end %> >
     <div class="page-content">
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
         <%= yield %>
-                <% if admin_user_signed_in? %>
+        <% if admin_user_signed_in? %>
           Logged in as <strong><%= current_admin_user.email %></strong>.
           <%= link_to "ログアウト", destroy_admin_user_session_path, method: :delete %>
         <% else %>
