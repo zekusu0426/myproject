@@ -11,7 +11,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151215075724) do
+ActiveRecord::Schema.define(version: 20151216041414) do
+
+  create_table "admin_users", force: :cascade do |t|
+    t.string   "email",               default: "", null: false
+    t.string   "encrypted_password",  default: "", null: false
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",       default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+  end
+
+  add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
+
+  create_table "admin_users_roles", id: false, force: :cascade do |t|
+    t.integer "admin_user_id", null: false
+    t.integer "role_id",       null: false
+  end
+
+  create_table "boxes", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "roles", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "sites", force: :cascade do |t|
     t.string   "name"
