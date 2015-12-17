@@ -46,10 +46,6 @@ gem 'annotate'
 # material design
 gem 'material_design_lite-rails'
 
-# login
-gem 'activeadmin'
-gem 'devise'
-
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
