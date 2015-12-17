@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   before_action :authenticate, if: :require_auth_controller?
 
-  REQUIRE_AUTH_CONTROLLERS = [BoxesController, SitesController,TopController]
+  REQUIRE_AUTH_CONTROLLERS = [BoxesController, SitesController, TopController]
 
   def require_auth_controller?
     REQUIRE_AUTH_CONTROLLERS.include?(self.class)

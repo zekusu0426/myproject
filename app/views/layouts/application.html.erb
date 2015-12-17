@@ -47,14 +47,20 @@
     </nav>
   </div>
 <% end %>
-  <main class="mdl-layout__content" <% unless admin_user_signed_in? %> style="margin-left: auto; margin-right: auto;" <% end %> >
-        <%= yield %>
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
-        <% unless admin_user_signed_in? %>
-          <%= link_to "ログイン", new_admin_user_session_path %>
+  <main class="mdl-layout__content" <% unless admin_user_signed_in? %> style=""<% end %>>
+
+        <% if notice || alert %>
+        <div class="alert-box">
+          <% if notice %>
+            <p class="alert alert-success"><%= notice %></p>
+          <% end %>
+          <% if alert %>
+            <p class="alert alert-danger"><%= alert %></p>
+          <% end %>
+        </div>
         <% end %>
 
+        <%= yield %>
   </main>
 </div>
 
