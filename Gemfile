@@ -39,7 +39,7 @@ gem 'annotate'
 gem 'material_design_lite-rails'
 
 # login
-gem 'activeadmin'
+gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
 
 group :development, :test do
