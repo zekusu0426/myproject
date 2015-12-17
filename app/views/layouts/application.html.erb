@@ -23,8 +23,8 @@
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation. We hide it in small screens. -->
       <nav class="mdl-navigation mdl-layout--large-screen-only">
+        <%= link_to 'ログアウト', destroy_admin_user_session_path, {:class => "mdl-navigation__link", :method => "delete" } %>
         <%= link_to 'User', root_path, {:class => "mdl-navigation__link"} %>
-        <a class="mdl-navigation__link" href="">Link</a>
         <a class="mdl-navigation__link" href="">Link</a>
         <a class="mdl-navigation__link" href="">Link</a>
       </nav>
@@ -37,6 +37,7 @@
 
 <% if admin_user_signed_in? %>
   <div class="mdl-layout__drawer">
+    <p>こんにちは<br><strong><%= current_admin_user.email %></strong>さん。</p>
     <span class="mdl-layout-title">Title</span>
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="">Link</a>
@@ -51,10 +52,7 @@
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
         <%= yield %>
-        <% if admin_user_signed_in? %>
-          Logged in as <strong><%= current_admin_user.email %></strong>.
-          <%= link_to "ログアウト", destroy_admin_user_session_path, method: :delete %>
-        <% else %>
+        <% unless admin_user_signed_in? %>
           <%= link_to "ログイン", new_admin_user_session_path %>
         <% end %>
     </div>
