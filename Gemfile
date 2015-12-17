@@ -32,7 +32,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-
 gem 'devise'
 
 gem 'cancancan'
@@ -40,6 +39,7 @@ gem 'cancancan'
 gem 'rails_admin'
 
 gem 'yaml_db'
+
 
 # material design
 gem 'material_design_lite-rails'
@@ -52,6 +52,7 @@ end
 group :development do
   # annotate
   gem 'annotate'
+
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 
