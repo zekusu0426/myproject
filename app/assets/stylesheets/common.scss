@@ -13,12 +13,7 @@ body {
 
 .mdl-layout {
   background-color: #f5f5f5;
-    // background-image: url(../../../public/images/background.png);
-  // background-repeat:    no-repeat;
-  // background-position:  top center;
-  // -moz-background-size: cover;
-  // background-size:    cover;
-  background-color: rgba(0,0,0,0.05);
+  // background-color: rgba(0,0,0,0.05);
 }
 
 // 基本構造
@@ -26,7 +21,8 @@ body {
   background-color: rgb(233,30,99);
 }
 
-
+.mdl-layout__content {
+}
 
 // ログイン画面の設定
 
@@ -73,13 +69,13 @@ body {
 }
 
 .mdl-button--raised.mdl-button--colored {
-    background: rgba(63,81,181,0.8);
+    background: rgba(244,67,54,0.8);
     color: rgb(255,255,255);
 }
 
 .actions .mdl-button {
   font-size: 16px;
-  font-weight: bold;
+  font-weight: 800;
 }
 
 // アラート機能
@@ -107,8 +103,58 @@ body {
 
 
 
+// ヘッダー
+// .mdl-layout__header {
+//   height: 144px;
+//   border-bottom: 2px solid rgb(244,67,54);
+// }
+
+// .mdl-layout__header-row {
+//   margin-top: 80px;
+// }
+
+// .mdl-navigation__link:hover {
+
+// }
+
+// .mdl-navigation__link:hover {
+//   ;
+// }
+
+// サイドバー
+
+.login-info-side {
+  padding-top: 20px;
+  padding-left: 40px;
+}
 
 
+// top/index
+
+.demo-card-event.mdl-card {
+  width: auto;
+  height: 256px;
+  background: #efefef;
+}
+.demo-card-event > .mdl-card__actions {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+.demo-card-event > .mdl-card__title {
+  align-items: flex-start;
+}
+.demo-card-event > .mdl-card__title > h4 {
+  margin-top: 0;
+}
+.demo-card-event > .mdl-card__actions {
+  display: flex;
+  box-sizing:border-box;
+  align-items: center;
+}
+.demo-card-event > .mdl-card__title,
+.demo-card-event > .mdl-card__actions,
+.demo-card-event > .mdl-card__actions > .mdl-button {
+  color: #fff;
+}
 
 // レスポンシブデザイン
 
@@ -129,7 +175,7 @@ body {
   }
 
   main {
-    margin-top: 56px;
+    margin-top: 146px;
   }
 }
 
