@@ -47,19 +47,7 @@
     </nav>
   </div>
 <% end %>
-  <main class="mdl-layout__content" <% unless admin_user_signed_in? %> style=""<% end %>>
-
-        <% if notice || alert %>
-        <div class="alert-box">
-          <% if notice %>
-            <p class="alert alert-success"><%= notice %></p>
-          <% end %>
-          <% if alert %>
-            <p class="alert alert-danger"><%= alert %></p>
-          <% end %>
-        </div>
-        <% end %>
-
+  <main class="mdl-layout__content" <% unless admin_user_signed_in? %> style="margin-left;"<% end %>>
         <%= yield %>
   </main>
 </div>
