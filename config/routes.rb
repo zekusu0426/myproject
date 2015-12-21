@@ -1,16 +1,34 @@
 Rails.application.routes.draw do
+
   get 'top/index'
 
-  devise_for :admin_users
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  # devise_for :admin_users
+  # devise_for :members
+
+
+
+devise_for :admin_user, controllers: {
+  sessions:      'admin_user/sessions',
+  passwords:     'admin_user/passwords',
+  registrations: 'admin_user/registrations'
+}
+devise_for :members, controllers: {
+  sessions:      'members/sessions',
+  passwords:     'members/passwords',
+  registrations: 'members/registrations'
+}
+
   resources :boxes
   resources :sites
   resources :top
+
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'top#index'
+    root 'top#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
