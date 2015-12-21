@@ -1,11 +1,28 @@
 Rails.application.routes.draw do
   get 'top/index'
 
-  devise_for :admin_users
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  # devise_for :admin_users
+  # devise_for :members
+
+
+
+devise_for :admin_users, controllers: {
+  sessions:      'admin_users/sessions',
+  passwords:     'admin_users/passwords',
+  registrations: 'admin_users/registrations'
+}
+devise_for :members, controllers: {
+  sessions:      'members/sessions',
+  passwords:     'members/passwords',
+  registrations: 'members/registrations'
+}
+
   resources :boxes
   resources :sites
   resources :top
+
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
