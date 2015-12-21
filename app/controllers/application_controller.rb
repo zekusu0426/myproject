@@ -13,6 +13,6 @@ class ApplicationController < ActionController::Base
 
   def authenticate
     # ログインしていない場合ログインフォームにリダイレクト
-    redirect_to(new_admin_user_session_path) unless admin_user_signed_in?
+    redirect_to(new_member_session_path) unless member_signed_in? || admin_user_signed_in?
   end
 end

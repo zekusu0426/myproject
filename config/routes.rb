@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'top/index'
 
   # devise_for :admin_users
@@ -6,10 +7,10 @@ Rails.application.routes.draw do
 
 
 
-devise_for :admin_users, controllers: {
-  sessions:      'admin_users/sessions',
-  passwords:     'admin_users/passwords',
-  registrations: 'admin_users/registrations'
+devise_for :admin_user, controllers: {
+  sessions:      'admin_user/sessions',
+  passwords:     'admin_user/passwords',
+  registrations: 'admin_user/registrations'
 }
 devise_for :members, controllers: {
   sessions:      'members/sessions',
@@ -27,7 +28,7 @@ devise_for :members, controllers: {
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'top#index'
+    root 'top#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
