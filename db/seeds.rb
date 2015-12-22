@@ -29,21 +29,30 @@ Member.create(id: 1,
               email: "guest@guest.com",
               password: "11111111",
               password_confirmation: "11111111")
+Member.create(id: 2,
+              email: "guest2@guest.com",
+              password: "11111111",
+              password_confirmation: "11111111")
 
-
-#  id         :integer          not null, primary key
-#  url        :string
-#  member_id  :integer
 
 Rsslist.delete_all
+Rsslist.create(url: "http://news.yahoo.co.jp/pickup/rss.xml",
+               member_id: 1)
+Rsslist.create(url: "http://feedjira.com/blog/feed.xml",
+               member_id: 1)
+Rsslist.create(url: "http://toianna.hatenablog.com/",
+               member_id: 1)
+Rsslist.create(url: "http://news.yahoo.co.jp/pickup/rss.xml",
+               member_id: 2)
+Rsslist.create(url: "http://toianna.hatenablog.com/",
+               member_id: 2)
+# Rsslist.transaction do
+#   20.times do
+#     Rsslist.create(url: "http://test.com",
+#                    member_id: [1,2].sample)
 
-Rsslist.transaction do
-  20.times do
-    Rsslist.create(url: "http://test.com",
-                   member_id: [1,2].sample)
-
-  end
-end
+#   end
+# end
 
 class AdminUsersRoles < ActiveRecord::Base; end
 AdminUsersRoles.delete_all

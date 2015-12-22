@@ -32,6 +32,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# login
 gem 'devise'
 
 gem 'cancancan'
@@ -39,6 +40,13 @@ gem 'cancancan'
 gem 'rails_admin'
 
 gem 'yaml_db'
+
+# rss-purge
+gem 'feedbag'
+gem 'feedjira'
+
+
+
 
 
 # material design
