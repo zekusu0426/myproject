@@ -21,6 +21,7 @@ devise_for :members, controllers: {
   resources :boxes
   resources :sites
   resources :top
+  resources :rsslist
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
