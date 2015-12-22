@@ -11,7 +11,8 @@ Role.create(id: 1,
             name: "admin")
 
 AdminUser.delete_all
-AdminUser.create(email: "admin@admin.com",
+AdminUser.create(id: 1,
+                 email: "admin@admin.com",
                  password: "11111111",
                  password_confirmation: "11111111")
 
@@ -24,9 +25,10 @@ AdminUser.create(email: "admin@admin.com",
 
 
 Member.delete_all
-Member.create(email: "guest@guest.com",
-                 password: "11111111",
-                 password_confirmation: "11111111")
+Member.create(id: 1,
+              email: "guest@guest.com",
+              password: "11111111",
+              password_confirmation: "11111111")
 
 
 #  id         :integer          not null, primary key
@@ -37,6 +39,15 @@ Rsslist.delete_all
 
 Rsslist.transaction do
   20.times do
-    Rsslist.create(:url => "http://test.com")
+    Rsslist.create(url: "http://test.com",
+                   member_id: [1,2].sample)
+
   end
 end
+
+class AdminUsersRoles < ActiveRecord::Base; end
+AdminUsersRoles.delete_all
+AdminUsersRoles.create(admin_user_id: 1,
+                       role_id: 1)
+
+# AdminUsersRoles.find_by(name: "admin").admin_users << AdminUser.find_by(email: "admin@admin.com")

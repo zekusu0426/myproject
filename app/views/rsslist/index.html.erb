@@ -1,0 +1,11 @@
+<p>テスト</p>
+<p>こんにちは</p>
+<p><strong><%= current_member.try(:id) || "" %></strong>さん。</p>
+<% @rsslists.each do |rsslist| %>
+  <ul>
+    <li><%= rsslist.id%></li>
+    <li><%= rsslist.url %></li>
+  </ul>
+<% end %>
+
+<%#= render 'member' %>
