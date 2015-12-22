@@ -18,8 +18,6 @@ devise_for :members, controllers: {
   registrations: 'members/registrations'
 }
 
-  resources :boxes
-  resources :sites
   resources :top
   resources :rsslist
 
@@ -29,7 +27,7 @@ devise_for :members, controllers: {
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-    root 'top#index'
+    root 'rsslist#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
