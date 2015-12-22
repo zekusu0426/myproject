@@ -1,16 +1,3 @@
-<p>テスト</p>
-<p>こんにちは</p>
-<p><strong><%= current_member.try(:id) || "" %></strong>さん。</p>
-
-
 <% @favorites.each do |favorite| %>
-  <p>タイトル:<%= favorite.title %></p>
-  <p>URL:<%= favorite.url %></p>
-  <p>表示記事数:<%= favorite.entries.count %></p>
-  <% favorite.entries.each_with_index do |entry,i| %>
-      <p>記事番号:<%= i %>
-      <p>記事のタイトル:<%= entry.title %></p>
-      <p>記事のURL:<%= entry.url %></p>
-  <% end %>
-  <br>
+
 <% end %>
