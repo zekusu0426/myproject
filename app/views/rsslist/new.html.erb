@@ -1,0 +1,11 @@
+<%= form_for(@rsslist) do |f| %>
+
+  <div class="field">
+    <%= f.label :url, "サイトURL" %>
+    <%= f.text_field :url %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "登録する" %>
+  </div>
+<% end %>

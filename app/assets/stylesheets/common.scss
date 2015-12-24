@@ -17,6 +17,10 @@ body,h1,h2,h3,h4,p {
 }
 
 // 基本構造
+body {
+  overflow: hidden;
+}
+
 .mdl-layout__header {
   background-color: rgb(233,30,99);
 }
@@ -131,30 +135,30 @@ body,h1,h2,h3,h4,p {
 
 // top/index
 
-.demo-card-event.mdl-card {
-  width: auto;
-  height: 256px;
-  background: #efefef;
-}
-.demo-card-event > .mdl-card__actions {
-  border-color: rgba(255, 255, 255, 0.2);
-}
-.demo-card-event > .mdl-card__title {
-  align-items: flex-start;
-}
-.demo-card-event > .mdl-card__title > h4 {
-  margin-top: 0;
-}
-.demo-card-event > .mdl-card__actions {
-  display: flex;
-  box-sizing:border-box;
-  align-items: center;
-}
-.demo-card-event > .mdl-card__title,
-.demo-card-event > .mdl-card__actions,
-.demo-card-event > .mdl-card__actions > .mdl-button {
-  color: #fff;
-}
+// .demo-card-event.mdl-card {
+//   width: auto;
+//   height: 256px;
+//   background: #efefef;
+// }
+// .demo-card-event > .mdl-card__actions {
+//   border-color: rgba(255, 255, 255, 0.2);
+// }
+// .demo-card-event > .mdl-card__title {
+//   align-items: flex-start;
+// }
+// .demo-card-event > .mdl-card__title > h4 {
+//   margin-top: 0;
+// }
+// .demo-card-event > .mdl-card__actions {
+//   display: flex;
+//   box-sizing:border-box;
+//   align-items: center;
+// }
+// .demo-card-event > .mdl-card__title,
+// .demo-card-event > .mdl-card__actions,
+// .demo-card-event > .mdl-card__actions > .mdl-button {
+//   color: #fff;
+// }
 
 
 //rsslist
@@ -203,7 +207,8 @@ body,h1,h2,h3,h4,p {
   margin :5px 0 10px 0;
   font-weight: 600;
   line-height: 22px;
-  overflow-y: hidden;
+  overflow: hidden;
+  max-height: 66px;
 }
 
 .mdl-card__supporting-text h2 a {
@@ -220,13 +225,41 @@ body,h1,h2,h3,h4,p {
   padding: 0 8px 5px 0;
   right: 0;
   bottom: 0;
-
 }
+
+.mdl-button {
+  text-transform: capitalize;
+}
+
+.mdl-button--fab {
+    font-size: 24px;
+    height: 72px;
+    min-width: 72px;
+    width: 72px;
+}
+
+.mdl-button--fab .button-tag {
+  display: block;
+  position: absolute;
+  font-size: 12px;
+  font-weight: 800;
+  text-align: center;
+  bottom: 10px;
+  left: 21px;
+  margin: 0;
+}
+
+.new-rss-bottom {
+  width: 72px;
+  margin: 65px auto;
+}
+
 // レスポンシブデザイン
 
 @media screen and (max-width: 1024px) {
 
   .mdl-layout__header {
+    display: block;
     position: fixed;
   }
 
@@ -236,12 +269,16 @@ body,h1,h2,h3,h4,p {
       position: fixed;
   }
 
+  .mdl-layout__drawer-button .material-icons {
+    font-size: 48px;
+  }
+
   .mdl-layout__container {
     margin: 0 auto;
   }
 
   main {
-    margin-top: 146px;
+    margin-top: 56px;
   }
 }
 

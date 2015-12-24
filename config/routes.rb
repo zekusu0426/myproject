@@ -19,7 +19,9 @@ devise_for :members, controllers: {
 }
 
   resources :top
-  resources :rsslist
+  get 'rsslist/index'
+  get 'rsslist/new'
+  post 'rsslist/create', as: :rsslists
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
