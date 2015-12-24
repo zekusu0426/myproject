@@ -12,7 +12,7 @@
  *
 
  * require_tree .
- *= require_self
  *= require material
  *= require common
+ *= require_self
  */

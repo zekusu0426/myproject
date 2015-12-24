@@ -1,27 +1,26 @@
 class RsslistController < ApplicationController
+  before_action :sign_in_required
   def index
     @favorites = Array.new
     urls = Rsslist.where(member_id: current_member.try(:id)).pluck(:url)
-
     urls.each do |url|
-      next if feed = Feedbag.find(url).first
+      next unless feed = Feedbag.find(url).first
       site = Feedjira::Feed.fetch_and_parse(feed)
       site_data = Hash.new
       entries = Hash.new
-
-
       site.entries.each_with_index do |entry,i|
         entries[i] = {:entry_title   => entry.title,
-                        :entry_summary => entry.summary,
-                        :entry_image   => entry.image}
+                      :entry_url     => entry.url,
+                      :entry_summary => entry.summary,
+                      :entry_image   => entry.image}
         break if i == 4
       end
 
       site_data = {:site_title => site.title,
                    :site_url   => site.url,
                    :entries    => entries }
-
       @favorites << site_data
     end
+    return @favorites
   end
 end
