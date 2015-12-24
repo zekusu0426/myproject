@@ -1,3 +1,22 @@
+<div class="mdl-grid">
 <% @favorites.each do |favorite| %>
-
+  <div class="mdl-cell mdl-cell--6-col">
+    <div class="mdl-card  mdl-shadow--2dp">
+      <div class="thumbnail">
+        <a href=' <%= favorite[:entries][0][:entry_url] %> ' target="blank"><img src="<%= asset_path "noimage.jpg" %>" height="182px" width="182px" alt="Noimage" title="Noimage"></a>
+      </div>
+        <div class="mdl-card__supporting-text">
+          <h2><a href=' <%= favorite[:entries][0][:entry_url] %> ' target="blank"><%= favorite[:entries][0][:entry_title] %></a></h2>
+          <div class="description">
+          <%= "ここの中にディスクリプションを挿入します。\n"*10 %>
+          </div>
+          <div class="links">引用元 : <a href=' <%= favorite[:site_url] %>' target="blank" ><%= favorite[:site_title] %></a>
+          </div>
+        </div>
+    </div>
+  </div>
 <% end %>
+</div>
+
+
+

@@ -3,7 +3,7 @@
 // accent-color = rgb(244,67,54)
 
 // 文字の設定・タイポグラフィ
-body {
+body,h1,h2,h3,h4,p {
   font-family:Avenir , "Open Sans" , "Helvetica Neue" , Helvetica , Arial , Verdana , Roboto , "游ゴシック" , "Yu Gothic" , "游ゴシック体" , "YuGothic" , "ヒラギノ角ゴ Pro W3" , "Hiragino Kaku Gothic Pro" , "Meiryo UI" , "メイリオ" , Meiryo , "ＭＳ Ｐゴシック" , "MS PGothic" , sans-serif;
 }
 
@@ -156,6 +156,72 @@ body {
   color: #fff;
 }
 
+
+//rsslist
+
+.mdl-card {
+  position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 192px;
+  border-bottom: 1px solid #eee;
+  padding: 5px 5px 5px 5px;
+
+  display: flex;
+  display: -moz-flex;
+  display: -o-flex;
+  display: -webkit-flex;
+  display: -ms-flex;
+  flex-direction: row;
+  -moz-flex-direction: row;
+  -o-flex-direction: row;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+}
+
+.thumbnail {
+  width: 182px;
+  height: 182px;
+}
+
+.thumbnail img {
+  width: 182px;
+  height: 182px;
+    border-radius: 1px solid #000;
+  -webkit-border-radius: 182px;
+  -moz-border-radius: 182px;
+}
+
+.mdl-card__supporting-text {
+  height: 182px;
+  padding: 0 10px 0 15px;
+  margin:  0px;
+}
+
+.mdl-card__supporting-text h2 {
+  font-size: 18px;
+  margin :5px 0 10px 0;
+  font-weight: 600;
+  line-height: 22px;
+  overflow-y: hidden;
+}
+
+.mdl-card__supporting-text h2 a {
+  text-decoration: none;
+}
+
+.mdl-card__supporting-text .description {
+  height: 54px;
+  overflow-y:hidden;
+}
+
+.mdl-card__supporting-text .links {
+  position: absolute;
+  padding: 0 8px 5px 0;
+  right: 0;
+  bottom: 0;
+
+}
 // レスポンシブデザイン
 
 @media screen and (max-width: 1024px) {
