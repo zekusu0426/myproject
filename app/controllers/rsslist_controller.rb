@@ -23,4 +23,23 @@ class RsslistController < ApplicationController
     end
     return @favorites
   end
+
+
+  def new
+    @rsslist = Rsslist.new
+  end
+
+  def create
+    @rsslist = current_member.rsslists.build(rsslist_params)
+    if @rsslist.save
+      redirect_to(root_url)
+    else
+      render 'new'
+    end
+  end
+
+  private
+  def rsslist_params
+    params.require(:rsslist).permit(:url)
+  end
 end
