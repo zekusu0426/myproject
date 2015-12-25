@@ -1,9 +1,12 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
 
-  get 'top/index'
-
+mount Sidekiq::Web, at: "/sidekiq"
+get 'top/index'
   # devise_for :admin_users
   # devise_for :members
+
 
 
 

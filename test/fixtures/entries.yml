@@ -1,0 +1,29 @@
+# == Schema Information
+#
+# Table name: entries
+#
+#  id            :integer          not null, primary key
+#  site_url      :string
+#  entry_name    :string
+#  entry_url     :string
+#  entry_image   :string
+#  entry_summary :string
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  site_url: MyString
+  entry_name: MyString
+  entry_url: MyString
+  entry_image: MyString
+  entry_summary: MyString
+
+two:
+  site_url: MyString
+  entry_name: MyString
+  entry_url: MyString
+  entry_image: MyString
+  entry_summary: MyString

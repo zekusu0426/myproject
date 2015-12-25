@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151221055229) do
+ActiveRecord::Schema.define(version: 20151225014433) do
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "email",               default: "", null: false
@@ -33,9 +33,14 @@ ActiveRecord::Schema.define(version: 20151221055229) do
     t.integer "role_id",       null: false
   end
 
-  create_table "boxes", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "entries", force: :cascade do |t|
+    t.string   "site_url"
+    t.string   "entry_name"
+    t.string   "entry_url"
+    t.string   "entry_image"
+    t.string   "entry_summary"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "members", force: :cascade do |t|
@@ -73,8 +78,8 @@ ActiveRecord::Schema.define(version: 20151221055229) do
   add_index "rsslists", ["member_id"], name: "index_rsslists_on_member_id"
 
   create_table "sites", force: :cascade do |t|
-    t.string   "name"
-    t.string   "url"
+    t.string   "site_name"
+    t.string   "site_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

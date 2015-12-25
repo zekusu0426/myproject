@@ -45,8 +45,10 @@ gem 'yaml_db'
 gem 'feedbag'
 gem 'feedjira'
 
-
-
+# active-job用
+gem 'sidekiq'
+gem 'sinatra', require: false
+gem 'redis-namespace'
 
 
 # material design

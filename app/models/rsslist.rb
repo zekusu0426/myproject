@@ -16,6 +16,7 @@
 
 class Rsslist < ActiveRecord::Base
   belongs_to :member
+  has_many :sites
 
   default_scope -> { order(created_at: :desc) }
   validates :url, presence: true
