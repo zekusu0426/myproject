@@ -42,6 +42,8 @@ Rsslist.create(url: "http://feedjira.com/blog/feed.xml",
                member_id: 1)
 Rsslist.create(url: "http://toianna.hatenablog.com/",
                member_id: 1)
+Rsslist.create(url: "http://gigazine.net/",
+               member_id: 1)
 Rsslist.create(url: "http://news.yahoo.co.jp/pickup/rss.xml",
                member_id: 2)
 Rsslist.create(url: "http://toianna.hatenablog.com/",
