@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Myproject</title>
+  <title>RSS-Readerを作る</title>
   <%= javascript_include_tag 'application' %>
   <%= stylesheet_link_tag "https://fonts.googleapis.com/icon?family=Material+Icons" %>
   <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -17,7 +17,7 @@
 <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
       <!-- Title -->
-      <span class="mdl-layout-title">My Project</span>
+      <span class="mdl-layout-title">RSS-Readerを作る</span>
       <% if member_signed_in? || admin_user_signed_in? %>
       <div class="mdl-layout-spacer"></div>
       <!-- Navigation. We hide it in small screens. -->
@@ -43,10 +43,10 @@
 
     <span class="mdl-layout-title">My Project</span>
     <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="">RSSリーダー</a>
+      <a class="mdl-navigation__link" href="">Speed Dial</a>
       <a class="mdl-navigation__link" href="">Link</a>
-      <a class="mdl-navigation__link" href="">Link</a>
-      <a class="mdl-navigation__link" href="">Link</a>
-      <a class="mdl-navigation__link" href="">Link</a>
+      <a class="mdl-navigation__link" href="">ログアウト</a>
     </nav>
   </div>
 <% end %>

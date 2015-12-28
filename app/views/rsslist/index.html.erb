@@ -4,12 +4,20 @@
   <div class="mdl-cell mdl-cell--6-col">
     <div class="mdl-card  mdl-shadow--2dp">
       <div class="thumbnail">
-        <a href=' <%= favorite[:entries][i][:entry_url] %> ' target="blank"><img src="<%= asset_path "noimage.jpg" %>" height="182px" width="182px" alt="Noimage" title="Noimage"></a>
+        <a href=' <%= favorite[:entries][i][:entry_url] %> ' target="blank">
+
+        <% if favorite[:entries][i][:entry_image] %>
+        <img src="<%= favorite[:entries][i][:entry_image] %>" height="182px" width="182px" alt="Noimage" title="Noimage">
+        <% else %>
+        <img src="<%= asset_path "noimage.jpg" %>" height="182px" width="182px" alt="Noimage" title="Noimage">
+        <% end %>
+
+        </a>
       </div>
         <div class="mdl-card__supporting-text">
           <h2><a href=' <%= favorite[:entries][i][:entry_url] %> ' target="blank"><%= favorite[:entries][i][:entry_title] %></a></h2>
           <div class="description">
-          <%= "ここの中にディスクリプションを挿入します。\n"*10 %>
+          <%= "ここにディスクリプションを表示"*10 %>
           </div>
           <div class="links">引用元 : <a href=' <%= favorite[:site_url] %>' target="blank" ><%= favorite[:site_title] %></a>
           </div>
@@ -20,7 +28,7 @@
 <% end %>
 
 <div class="mdl-cell mdl-cell--6-col">
- <a href="#">
+ <a href="http://localhost:3000/rsslist/new">
   <div class="new-rss-bottom">
       <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
         <i class="material-icons">add</i>

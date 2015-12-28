@@ -4,15 +4,17 @@ class RsslistController < ApplicationController
     @favorites = Array.new
     urls = Rsslist.where(member_id: current_member.try(:id)).pluck(:url)
     urls.each do |url|
-      next unless feed = Feedbag.find(url).first
+      next unless feed = Feedbag.find(url).last
       site = Feedjira::Feed.fetch_and_parse(feed)
       site_data = Hash.new
       entries = Hash.new
       site.entries.each_with_index do |entry,i|
+        /<img(.)src=\"?([-_.!~\\'()a-z0-9\;\/\?:@&=+\$\,\%#]+(jpg|jpeg|gif|png|bmp))/i =~ entry.content
+        entry_image = $2
         entries[i] = {:entry_title   => entry.title,
                       :entry_url     => entry.url,
                       :entry_summary => entry.summary,
-                      :entry_image   => entry.image}
+                      :entry_image   => entry_image}
         break if i == 4
       end
 

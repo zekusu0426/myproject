@@ -282,3 +282,8 @@ body {
   }
 }
 
+@media (max-width: 839px) and (min-width: 480px){
+  .mdl-cell--6-col, .mdl-cell--6-col-tablet.mdl-cell--6-col-tablet {
+      width: 100%;
+  }
+}
